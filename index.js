@@ -24,10 +24,9 @@ app.post('/login', (req, res) => {
         // Generate JWT
         const token = jwt.sign(payload, SECRET_KEY)
 
-        // Set JWT token on headers
-        res.set('authorization', token)
         res.send({
-            message : 'Login Success'
+            message : 'Login Success',
+            token : token,
         })
     }
     else {
